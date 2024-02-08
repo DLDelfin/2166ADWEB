@@ -1,0 +1,88 @@
+<section class="text-format">
+  <div>
+    <h2> Text-Format Pipes</h2>
+    <p> Date with uppercase text: {{ presentDate | date: 'fullDate' | uppercase}} </p>
+    <p> Date with lowercase text: {{ presentDate | date: 'medium' | lowercase}} </p>
+  </div>
+</section>
+
+<hr>
+
+<section class="date-pipes">
+    <div>
+      <h2> Date-Pipes</h2>
+      <p> Today's date (Default):- {{presentDate}} </p>
+      <p> Short Date {{presentDate | date: 'shortDate'}} </p>
+      <p> Medium Date {{presentDate | date: 'mediumDate' }}</p>
+      <p> Long Date {{presentDate | date: 'longDate'}}</p>
+      <h2> Date with Parameters </h2>
+      <P> Formatted Date: {{presentDate | date: 'M/dd/yyyy' }} </P>
+      <P> Hours and Minutes: {{presentDate | date: 'h:m'}} </P>
+  </div>
+</section>
+
+<hr>
+
+<section class="currency-pipes">
+  <div>
+    <h2> Currency Pipe </h2>
+    <p> {{ price | currency : '' : true }}</p>
+    <p> {{price | currency : 'INR'}}</p>
+    <p>{{ price | currency : 'Php '}}</p>
+  </div>
+</section>
+
+<hr>
+
+<section class="decimal-pipes">
+  <div>
+    <h2> Decimal Pipe </h2>
+    <p>{{decimalNum1 | number }}<p>
+    <p>{{decimalNum2 | number }}</p>
+    <p>{{decimalNum3 | number }}</p>
+  </div>
+</section>
+
+<hr>
+
+<section class="json-pipes">
+  <div>
+    <h2>jsonPipes</h2>
+    <pre>{{data | json}} </pre>
+    <pre>{{aton | json}} </pre>
+    <pre></pre>
+  </div>
+</section>
+
+<hr>
+
+<section class="percent-pipes">
+  <div>
+    <h2>Percent Pipes</h2>
+    <p>{{num | percent: '2.0-1':'en'}}</p>
+    <p>{{num1 | percent: '2.0-1':'en'}}</p>
+    <p>{{num2 | percent: '2.0-1':'en'}}</p>
+  </div>
+</section>
+
+<hr>
+
+<section class="sliced-pipes">
+  <div>
+    <h2> Sliced Pipe </h2>
+    <p>Start index:- {{ Cars | slice:2}}</p>
+    <p>Start and end index:- {{ Cars | slice:1:4}}</p>
+    <p>Negative index:- {{Cars | slice:-2}}</p>
+    <p>Negative start and end index:- {{Cars | slice:-4:-2}}</p>
+  </div>
+</section>
+
+<hr>
+
+<section class="asynch-demo">
+  <div>
+    <h2> Asynch Demo </h2>
+    <p> Seconds changing in Time: {{ time$ | async | date: 'mediumTime' }} </p>
+  </div>
+</section>
+
