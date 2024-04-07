@@ -1,0 +1,55 @@
+<div class="row justify-content-center mt-5">
+  <div class="mb-5">
+      <form class="max-w-sm mx-auto" [formGroup]="updateForm" (ngSubmit)="onUpdate()">
+        <div class="mb-2">
+          <label>Title</label>
+        </div>
+       <mat-form-field class="example-form-field">
+          <mat-label>Enter Book Title</mat-label>
+          <input matInput placeholder="Ex. Harry Potter" formControlName="title" required>
+          <button *ngIf="updateForm.get('title')?.value" matSuffix mat-icon-button aria-label="Clear" (click)="updateForm.get('title')?.setValue('')">
+            <mat-icon>close</mat-icon></button>
+        </mat-form-field>
+ 
+        <div class="mb-2">
+          <label>Price</label>
+        </div>
+
+        <mat-form-field class="example-form-field" floatLabel="always">
+          <mat-label></mat-label>
+          <input matInput type="number" formControlName="price" required placeholder="0" [step]="1.00">
+          <span matPrefix>₱&nbsp;</span>
+          <span matSuffix>.00</span>
+          <button *ngIf="updateForm.get('price')?.value" matSuffix mat-icon-button aria-label="Clear" (click)="updateForm.get('price')?.setValue('')">
+            <mat-icon>close</mat-icon></button>
+        </mat-form-field>
+
+        
+ 
+        <div class="mb-2">
+          <label>Description</label>
+        </div>
+
+          <mat-form-field class="example-form-field">
+            <mat-label>Enter Description</mat-label>
+            <textarea matInput formControlName="description" required></textarea>
+            <button *ngIf="updateForm.get('description')?.value" matSuffix mat-icon-button aria-label="Clear" (click)="updateForm.get('description')?.setValue('')">
+              <mat-icon>close</mat-icon></button>
+          </mat-form-field>
+
+        <div class="mb-2">
+        <mat-chip-listbox aria-label="Book type" required formControlName="book_type">
+          <mat-chip-option>Local Author</mat-chip-option>
+          <mat-chip-option>Foreign Author</mat-chip-option>
+        </mat-chip-listbox>
+        </div>
+        
+        <div class="mb-2">
+          <button class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="submit">Update Book</button>
+        </div>
+        
+        
+      </form>
+  </div>
+
+</div>

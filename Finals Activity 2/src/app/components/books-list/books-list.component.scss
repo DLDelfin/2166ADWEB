@@ -1,0 +1,81 @@
+.container {
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 40px 30px; /* Increased vertical padding */
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px; /* Increased margin bottom */
+  }
+  
+  .title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px; /* Increased margin bottom */
+  }
+  
+  .filter {
+    width: 300px;
+    margin-bottom: 20px; /* Increased margin bottom */
+  }
+  
+  .table-responsive {
+    overflow-x: auto;
+  }
+  
+  .mat-elevation-z8 {
+    border-collapse: collapse;
+    width: 100%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .mat-row:nth-child(even) {
+    background-color: #f0f0f0; /* Light gray for even rows */
+  }
+  
+  .mat-row:nth-child(odd) {
+    background-color: #ffffff; /* White for odd rows */
+  }
+  
+  .mat-cell,
+.mat-header-cell {
+  padding: 24px 16px; /* Increased vertical padding */
+  height: 100px; /* Set the height of td elements */
+}
+  .no-data-row {
+    font-style: italic;
+    color: #999;
+  }
+  
+  .btn-edit,
+  .btn-delete {
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-edit {
+    background-color: #117714; /* Green */
+  }
+  
+  .btn-delete {
+    background-color: #8b0000; /* Red */
+  }
+  
+  .btn-edit:hover,
+  .btn-delete:hover {
+    background-color: #584949; /* Darker color on hover */
+  }
+  
+  .description-column {
+    width: 10px; /* Adjust the width as needed */
+  }
