@@ -1,0 +1,55 @@
+<div class="row justify-content-center mt-5">
+    <div class="mb-5">
+        <form class="max-w-sm mx-auto" [formGroup]="bookForm" (ngSubmit)="onSubmit()">
+          <div class="mb-2">
+            <label>Title</label>
+          </div>
+         <mat-form-field class="example-form-field">
+            <mat-label>Enter Book Title</mat-label>
+            <input matInput placeholder="Ex. Advance Dynamic Web Books" formControlName="title" required>
+            <button *ngIf="bookForm.get('title')?.value" matSuffix mat-icon-button aria-label="Clear" (click)="bookForm.get('title')?.setValue('')">
+              <mat-icon>close</mat-icon></button>
+          </mat-form-field>
+   
+          <div class="mb-2">
+            <label>Price</label>
+          </div>
+
+          <mat-form-field class="example-form-field" floatLabel="always">
+            <mat-label></mat-label>
+            <input matInput type="number" formControlName="price" required placeholder="0" [step]="1.00">
+            <span matPrefix>₱</span>
+            <!-- <span matSuffix>.00</span> -->
+            <button *ngIf="bookForm.get('price')?.value" matSuffix mat-icon-button aria-label="Clear" (click)="bookForm.get('price')?.setValue('')">
+              <mat-icon>close</mat-icon></button>
+          </mat-form-field>
+
+          
+   
+          <div class="mb-2">
+            <label>Description</label>
+          </div>
+
+            <mat-form-field class="example-form-field">
+              <mat-label>Enter Description</mat-label>
+              <textarea matInput formControlName="description" required></textarea>
+              <button *ngIf="bookForm.get('description')?.value" matSuffix mat-icon-button aria-label="Clear" (click)="bookForm.get('description')?.setValue('')">
+                <mat-icon>close</mat-icon></button>
+            </mat-form-field>
+
+          <div class="mb-2">
+          <mat-chip-listbox aria-label="Book type" required formControlName="book_type">
+            <mat-chip-option>Local Author</mat-chip-option>
+            <mat-chip-option>Foreign Author</mat-chip-option>
+          </mat-chip-listbox>
+          </div>
+          <br>
+          <div class="mb-2">
+            <button [disabled]="!bookForm.valid" class="bg-gradient-to-r from-gray-700 to-gray-900 hover:from-green-900 hover:to-green-700 focus:ring-4 focus:ring-blue-300 focus:outline-none font-medium rounded-lg text-sm py-2.5 px-6 text-white shadow-lg transition duration-300 ease-in-out" type="submit">Add Book</button>
+          </div>
+          
+          
+        </form>
+    </div>
+  
+  </div>
